@@ -1,4 +1,4 @@
-var playlist = document.querySelector("ul");
+var playlist = document.querySelector("ol");
 var songs = document.querySelectorAll("li");
 var songArray = [
   "Artist - Songname1",

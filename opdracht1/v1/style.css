@@ -1,17 +1,51 @@
-ul {
+@keyframes shadow {
+  0% {
+    -webkit-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0);
+    box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0);
+  }
+  50% {
+    -webkit-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.61);
+    box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.61);
+  }
+
+  100% {
+    -webkit-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+    box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+  }
+}
+
+body {
+  font-family: "Sarabun", sans-serif;
+}
+
+ol {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  padding: 0;
 }
 
-ul > li {
+ol > li {
   background-color: lightgrey;
   padding: 0.5em 1.3em 0.5em 1.3em;
   margin: 0.2em;
 }
-ul > li:hover {
+ol > li:hover {
   background-color: #bae1ff;
   opacity: 0.8;
+  animation: shadow 1s ease-in;
+  -webkit-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+  box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+}
+
+input[type="text"] {
+  width: 50%;
+  font-size: 1.2em;
+  padding: 0.3em 0.2em;
 }
