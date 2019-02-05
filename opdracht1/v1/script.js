@@ -54,7 +54,8 @@ document.addEventListener(
   function(event) {
     // highlight potential drop target when the draggable element enters it
     if (event.target.className == "dropzone") {
-      event.target.style.background = "purple";
+      event.target.style.background = "yellow";
+      event.target.style.textContent = "drop here";
     }
   },
   false
