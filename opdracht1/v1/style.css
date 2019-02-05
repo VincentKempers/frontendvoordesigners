@@ -1,0 +1,17 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul > li {
+  background-color: lightgrey;
+  padding: 0.5em 1.3em 0.5em 1.3em;
+  margin: 0.2em;
+}
+ul > li:hover {
+  background-color: #bae1ff;
+  opacity: 0.8;
+}
