@@ -1,20 +1,25 @@
 var playlist = document.querySelector("ol");
-var songs = document.querySelectorAll("li");
+
 var songArray = [
-  "Artist - Songname1",
-  "Artist - Songname2",
-  "Artist - Songname3",
-  "Artist - Songname4",
-  "Artist - Songname5",
-  "Artist - Songname6"
+  { artist: "Saba", song: "Excited", duration: "2:00" },
+  { artist: "Monte Booker & Bari", song: "interstellar", duration: "2:00" },
+  { artist: "GoldLink", song: "Pray Everyday", duration: "2:00" },
+  { artist: "GoldLink", song: "Got Muscle", duration: "2:00" },
+  { artist: "Domo Genesis", song: "Online", duration: "2:00" }
 ];
 var dragged;
 
 var playlistInsert = playlist.children;
 for (let i = 0; i < songArray.length; i++) {
   playlist.insertAdjacentHTML(
-    "afterbegin",
-    `<li class="dropzone" draggable="true">${songArray[i]}</li>`
+    "beforeend",
+    `<li class="dropzone" draggable="true">
+      
+        <p>${songArray[i].artist}</p>
+        <p>${songArray[i].song}</p>
+        <p>${songArray[i].duration}</p>
+     
+    </li>`
   );
 }
 
@@ -81,9 +86,14 @@ document.addEventListener(
     if (event.target.className == "dropzone") {
       event.target.style.background = "";
       dragged.parentNode.removeChild(dragged);
+      console.log(dragged.children[0]);
       event.target.insertAdjacentHTML(
-        "beforebegin",
-        `<li class="dropzone" draggable="true">${dragged.textContent}</li>`
+        "afterend",
+        `<li class="dropzone" draggable="true">
+        <p> ${dragged.children[0].textContent}</p>
+        <p> ${dragged.children[1].textContent}</p>
+        <p> ${dragged.children[2].textContent}</p>
+        </li>`
       );
     }
   },

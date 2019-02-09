@@ -19,6 +19,11 @@
 
 body {
   font-family: "Sarabun", sans-serif;
+  background-color: #151515;
+}
+
+h1 {
+  color: #dbdbdb;
 }
 
 ol {
@@ -31,17 +36,38 @@ ol {
 }
 
 ol > li {
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+  border-bottom: solid 1px white;
   padding: 0.5em 1.3em 0.5em 1.3em;
   margin: 0.2em;
+  color: white;
 }
 ol > li:hover {
-  background-color: #bae1ff;
+  background-color: #4a4a4a;
   opacity: 0.8;
   animation: shadow 1s ease-in;
   -webkit-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
   box-shadow: 7px 7px 31px -9px rgba(0, 0, 0, 0.31);
+}
+
+ol > li {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: start;
+}
+
+ol > li > p:nth-child(1),
+ol > li > p:nth-child(2) {
+  margin-right: 2em;
+  width: 50em;
+}
+
+ol > li:first-of-type {
+  color: rgba(255, 255, 255, 0.31);
+  text-transform: uppercase;
+  font-size: 0.8em;
 }
 
 input[type="text"] {
