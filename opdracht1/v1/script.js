@@ -14,11 +14,9 @@ for (let i = 0; i < songArray.length; i++) {
   playlist.insertAdjacentHTML(
     "beforeend",
     `<li class="dropzone" draggable="true">
-
         <p>${songArray[i].artist}</p>
         <p>${songArray[i].song}</p>
         <p>${songArray[i].duration}</p>
-
     </li>`
   );
 }
