@@ -54,7 +54,7 @@ document.addEventListener(
     // store a ref. on the dragged elem
     dragged = event.target;
     // make it half transparent
-    event.target.style.opacity = 0.5;
+    event.target.style.opacity = 0.25;
 
   },
   false
@@ -100,7 +100,6 @@ document.addEventListener(
     if (event.target.className == "dropzone") {
       event.target.removeAttribute("id", 'over');
       event.target.style.borderBottom = "";
-      // event.target.classList.remove("over");
       console.log(event.target, "leave");
     }
   },
