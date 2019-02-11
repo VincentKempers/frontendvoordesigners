@@ -70,6 +70,15 @@ ol > li:first-of-type {
   font-size: 0.8em;
 }
 
+ol > li:hover {
+  cursor: grab;
+
+}
+
+ol > li:target {
+  cursor:grabbing;
+}
+
 input[type="text"] {
   width: 50%;
   font-size: 1.2em;

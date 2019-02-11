@@ -64,7 +64,7 @@ document.addEventListener(
   function(event) {
     // highlight potential drop target when the draggable element enters it
     if (event.target.className == "dropzone") {
-      event.target.style.background = "lightgrey";
+      event.target.style.borderBottom = "3px solid lightgreen";
       // event.target.classList.add("over");
     }
     // event.target.classList.remove("over");
@@ -77,7 +77,7 @@ document.addEventListener(
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
     if (event.target.className == "dropzone") {
-      event.target.style.background = "";
+      event.target.style.borderBottom = "";
       event.target.classList.remove("over");
     }
   },
@@ -90,8 +90,10 @@ for (var i = 0; i < dropZone.length; i++) {
     // console.log(this.children[2].className)
     if (this.children[2].className == "duration") {
       this.children[2].innerHTML = "image";
+    } else {
+      this.children[2].innerHTML = "2:00";
     }
-  }, true)
+  }, false)
   dropZone[i].addEventListener("mouseleave", function(event) {
     // console.log(this.children[2].className)
     if (this.children[2].className == "duration") {
@@ -108,7 +110,7 @@ document.addEventListener(
     event.preventDefault();
     // move dragged elem to the selected drop target
     if (event.target.className == "dropzone") {
-      event.target.style.background = "";
+      event.target.style.borderBottom = "";
       event.target.classList.remove("over");
       dragged.parentNode.removeChild(dragged);
       event.target.insertAdjacentHTML(
