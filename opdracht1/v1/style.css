@@ -124,8 +124,8 @@ input[type="text"] {
 }
 
 
-.over {
-  border: 2px dashed #fff
+#over {
+  border-bottom: 3px solid lightgreen;
 }
 
 svg {

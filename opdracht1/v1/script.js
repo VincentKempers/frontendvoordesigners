@@ -65,7 +65,6 @@ document.addEventListener(
   function(event) {
     // reset the transparency
     event.target.style.opacity = "";
-    event.target.classList.remove("over");
   },
   false
 );
@@ -85,21 +84,24 @@ document.addEventListener(
   function(event) {
     // highlight potential drop target when the draggable element enters it
     if (event.target.className == "dropzone") {
-      event.target.style.borderBottom = "3px solid lightgreen";
-      // event.target.classList.add("over");
+      event.target.setAttribute("id", 'over');
+      console.log(event.target, "enter");
     }
-    // event.target.classList.remove("over");
+
   },
   false
 );
+
 
 document.addEventListener(
   "dragleave",
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
     if (event.target.className == "dropzone") {
+      event.target.removeAttribute("id", 'over');
       event.target.style.borderBottom = "";
-      event.target.classList.remove("over");
+      // event.target.classList.remove("over");
+      console.log(event.target, "leave");
     }
   },
   false
@@ -118,7 +120,7 @@ for (var i = 0; i < dropZone.length; i++) {
     if (this.children[4]) {
       this.children[4].classList.remove('show');
     }
-  }, true)
+  }, false)
 }
 
 
@@ -130,7 +132,7 @@ document.addEventListener(
     // move dragged elem to the selected drop target
     if (event.target.className == "dropzone") {
       event.target.style.borderBottom = "";
-      event.target.classList.remove("over");
+      event.target.removeAttribute("id", 'over');
       dragged.parentNode.removeChild(dragged);
       event.target.insertAdjacentHTML(
         "afterend",
