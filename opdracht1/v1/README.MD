@@ -1,60 +1,34 @@
 # Playlist Editor
+
+![Playlist editor](http://g.recordit.co/lBjCma73vU.gif)
 An HTML/CSS/JS prototype of a playlist editor.
 
 ## Getting Started
-- fork the [repo](https://github.com/VincentKempers/frontendvoordesigners.git).
+- Fork the [repo](https://github.com/VincentKempers/frontendvoordesigners.git).
 - To run it locally you only need a browser and run the index.html
 
-## Tests
+## User Feedback Test
 
 _Tests will be conducted on 11-02-2019_
 
-### Break down into end to end tests
 
-Explain what these tests test and why
+### coding style
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+![Code](rassets/code.png)
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+it's hosted on GitHub Pages.
 
 ## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+  - HTML5
+  - CSS3
+  - JavaScript
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Vincent Kempers** - [Github](https://github.com/vincentkempers) - [Twitter](https://twitter.com/vincentkempers)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc  
