@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="NL">
   <link rel="stylesheet" href="style.css" />
   <link
     href="https://fonts.googleapis.com/css?family=Sarabun"
@@ -9,21 +10,21 @@
     <main>
       <section>
         <!-- Image for the playlist -->
-        <img src="" alt="" />
+        <div class="playlistImage">
+          <h2>Jouw<br/>Playlist</h2>
+        </div>
+        
       </section>
-      <section>
+      <section class="playlist">
         <h1>Playlist editor</h1>
-        <input type="text" />
+        <input type="text"/>
         <ol>
-          <li>
+          <li class="dropzone" id="top">
             <p>name</p>
             <p>title</p>
-            <p>time</p>
-          </li>
-          <li class="dropzone" draggable="true">
-              <p>Trekkie Trax</p>
-              <p>That Thing</p>
-              <p class="duration">2:00</p>
+            <p>Duration</p>
+            <p>added</p>
+            <p></p>
           </li>
         </ol>
       </section>
