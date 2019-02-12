@@ -1,12 +1,47 @@
 /*jshint esversion: 6 */
 var songArray = [
-  { artist: "Pusha-T", song: "Nostalgia", duration: "2:00", date:new Date(2019, 0, 19).toString().slice(4,15) },
-  { artist: "Monte Booker & Bari", song: "interstellar", duration: "2:00", date:new Date(2013, 0, 1).toString().slice(4,15) },
-  { artist: "GoldLink", song: "Pray Everyday", duration: "2:00", date:new Date(2019, 0, 12).toString().slice(4,15) },
-  { artist: "GoldLink", song: "Got Muscle", duration: "2:00", date:new Date(2019, 0, 25).toString().slice(4,15) },
-  { artist: "Domo Genesis", song: "Online", duration: "2:00", date:new Date(2019, 0, 22).toString().slice(4,15) },
-  { artist: "Saba", song: "Excited", duration: "2:00", date:new Date(2019, 0, 15).toString().slice(4,15) },
-  { artist: "Smino", song: "Colours", duration: "2:00", date:new Date().toString().slice(4,15) },
+  {
+    artist: "Pusha-T",
+    song: "Nostalgia",
+    duration: "2:00",
+    date: new Date(2019, 0, 19).toString().slice(4, 15)
+  },
+  {
+    artist: "Monte Booker & Bari",
+    song: "interstellar",
+    duration: "2:00",
+    date: new Date(2013, 0, 1).toString().slice(4, 15)
+  },
+  {
+    artist: "GoldLink",
+    song: "Pray Everyday",
+    duration: "2:00",
+    date: new Date(2019, 0, 12).toString().slice(4, 15)
+  },
+  {
+    artist: "GoldLink",
+    song: "Got Muscle",
+    duration: "2:00",
+    date: new Date(2019, 0, 25).toString().slice(4, 15)
+  },
+  {
+    artist: "Domo Genesis",
+    song: "Online",
+    duration: "2:00",
+    date: new Date(2019, 0, 22).toString().slice(4, 15)
+  },
+  {
+    artist: "Saba",
+    song: "Excited",
+    duration: "2:00",
+    date: new Date(2019, 0, 15).toString().slice(4, 15)
+  },
+  {
+    artist: "Smino",
+    song: "Colours",
+    duration: "2:00",
+    date: new Date().toString().slice(4, 15)
+  }
 ];
 
 var playlist = document.querySelector("ol");
@@ -46,20 +81,23 @@ for (let i = 0; i < songArray.length; i++) {
   );
 }
 
+addSong.addEventListener(
+  "click",
+  function(event) {
+    event.preventDefault();
+    // variable to store data
+    var addSongInfo = {};
 
-addSong.addEventListener("click",function(event) {
-  event.preventDefault();
-  // variable to store data
-  var addSongInfo = {};
+    // Get the data from  the inputs
+    addSongInfo.artist = document.querySelector(".Artist").value;
+    addSongInfo.song = document.querySelector(".Title").value;
+    addSongInfo.duration = document.querySelector(".Duration").value;
+    addSongInfo.date = new Date().toString().slice(4, 15);
 
-  addSongInfo.artist = document.querySelector(".Artist").value;
-  addSongInfo.song = document.querySelector(".Title").value;
-  addSongInfo.duration = document.querySelector(".Duration").value;
-  addSongInfo.date = new Date().toString().slice(4,15);
-
-  playlist.insertAdjacentHTML(
-    "beforeend",
-    `<li class="dropzone" draggable="true">
+    // fill in the data with html
+    playlist.insertAdjacentHTML(
+      "beforeend",
+      `<li class="dropzone" draggable="true">
         <p>${addSongInfo.artist}</p>
         <p>${addSongInfo.song}</p>
         <p class="duration">${addSongInfo.duration}</p>
@@ -85,20 +123,27 @@ addSong.addEventListener("click",function(event) {
           </svg>
         </p>
     </li>`
-  );
+    );
 
-  songArray.push(addSongInfo);
-  counter + 1;
-  counter.innerHTML = "Songs: " + songArray.length;
-},true)
+    //  push the data in the array
+    songArray.push(addSongInfo);
+    // add +1 to the counter
+    counter + 1;
+    // fill in the counter with the length
+    counter.innerHTML = "Songs: " + songArray.length;
+  },
+  true
+);
 
 // here we are going to store the event.target
 var dragged;
-
+// get the children of the playlist
 var playlistInsert = playlist.children;
 
-
+// start the drag event listener
 document.addEventListener("drag", function(event) {}, false);
+
+// When the item is being held
 document.addEventListener(
   "dragstart",
   function(event) {
@@ -106,7 +151,6 @@ document.addEventListener(
     dragged = event.target;
     // make it half transparent
     event.target.style.opacity = 0.25;
-
   },
   false
 );
@@ -135,29 +179,26 @@ document.addEventListener(
   function(event) {
     // highlight potential drop target when the draggable element enters it
     if (event.target.className == "dropzone") {
-      event.target.setAttribute("id", 'over');
+      event.target.setAttribute("id", "over");
       console.log(event.target, "enter");
     }
-
   },
   false
 );
-
 
 document.addEventListener(
   "dragleave",
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
     if (event.target.className == "dropzone") {
-      event.target.removeAttribute("id", 'over');
+      // remove the ID so it won't show
+      event.target.removeAttribute("id", "over");
+      // remove the ID so it won't show the border (failsafe)
       event.target.style.borderBottom = "";
-      console.log(event.target, "leave");
     }
   },
   false
 );
-
-
 
 document.addEventListener(
   "drop",
@@ -166,9 +207,13 @@ document.addEventListener(
     event.preventDefault();
     // move dragged elem to the selected drop target
     if (event.target.className == "dropzone") {
+      // don't show the border anymore
       event.target.style.borderBottom = "";
-      event.target.removeAttribute("id", 'over');
+      // remove the id "over"
+      event.target.removeAttribute("id", "over");
+      // Remove the child beneath
       dragged.parentNode.removeChild(dragged);
+      // add html after the end of the selected target.
       event.target.insertAdjacentHTML(
         "afterend",
         `<li class="dropzone" draggable="true">
@@ -203,20 +248,28 @@ document.addEventListener(
   false
 );
 
-
+// add the hover to the songs to show the grab icon
 
 var dropZone = document.querySelectorAll(".dropzone");
 for (var i = 0; i < dropZone.length; i++) {
-  dropZone[i].addEventListener("mouseover", function(event) {
-    // console.log(this.children[4].className)
-    if (this.children[4]) {
-      this.children[4].classList.add('show');
-    }
-  }, false)
-  dropZone[i].addEventListener("mouseleave", function(event) {
-    // console.log(this.children[2].className)
-    if (this.children[4]) {
-      this.children[4].classList.remove('show');
-    }
-  }, false)
+  dropZone[i].addEventListener(
+    "mouseover",
+    function(event) {
+      // console.log(this.children[4].className)
+      if (this.children[4]) {
+        this.children[4].classList.add("show");
+      }
+    },
+    false
+  );
+  dropZone[i].addEventListener(
+    "mouseleave",
+    function(event) {
+      // console.log(this.children[2].className)
+      if (this.children[4]) {
+        this.children[4].classList.remove("show");
+      }
+    },
+    false
+  );
 }
