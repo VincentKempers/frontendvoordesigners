@@ -78,7 +78,6 @@ for (let i = 0; i < songArray.length; i++) {
             </g>
           </svg>
         </p>
-        <div id="borderSet"></div>
     </li>`
   );
 }
@@ -107,7 +106,6 @@ addSong.addEventListener(
         <p id="dragOption">
           <img src="rassets/icon.svg" alt="icon">
         </p>
-        <div id="borderSet"></div>
     </li>`
     );
 
@@ -214,7 +212,6 @@ document.addEventListener(
         <p id="dragOption">
         ${dragged.children[4].textContent}
         </p>
-        <div id="borderSet" class="borderAnim"></div>
         </li>`
       );
     }
