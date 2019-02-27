@@ -1,0 +1,29 @@
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+#home {
+  background-color: #b5e4c9;
+}
+#about {
+  background-color: #b8dcf5;
+}
+#work {
+  background-color: #ddc6e7;
+}
+#work-2 {
+  background-color: #b9c0c9;
+}
+#work-3 {
+  background-color: #ace9db;
+}
