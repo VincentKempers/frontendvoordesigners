@@ -1,14 +1,24 @@
-var allSections = $("section");
-console.log(allSections);
+var allSections = [
+  "#home",
+  "#about",
+  "#work",
+  "#work-2",
+  "#work-3",
+  "#contact"
+];
 
-$("html, body").keyup("e", function() {
-  window.location.hash = "#work";
+$(document).on("keypress", function(key) {
+  if (key.which == "110") {
+    window.location.hash = next(window.location.hash);
+  }
+  if (key.which == "112") {
+    console.log("previous");
+  }
 });
 
-function nextSection() {
-  // go to the nest section
-}
-
-function prevSection() {
-  // go to the previous section
+function next(name) {
+  var index = allSections.indexOf(name);
+  index++;
+  if (index >= allSections.length) index = 0;
+  return allSections[index];
 }
