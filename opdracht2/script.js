@@ -8,14 +8,16 @@ var allSections = [
 ];
 
 $(document).on("keypress", function(key) {
-  if (key.which == "110") {
+  if (key.which == "110" || key.which == "91") {
     window.location.hash = next(window.location.hash);
   }
-  if (key.which == "112") {
+  console.log(key);
+  if (key.which == "112" || key.which == "38") {
     console.log("previous");
     window.location.hash = previous(window.location.hash);
   }
 });
+
 
 function next(name) {
   var index = allSections.indexOf(name);
