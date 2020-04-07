@@ -13,7 +13,10 @@ Because of this you can edit your playlist within my application.
 # installation
 - clone the repo
 - then install the dependencies `npm install`
+- there will be a step to use your
 - when installed you can run the application with `node app.js`.
+
+
 
 # used
 - [Spotify Web API](https://github.com/spotify/web-api-auth-examples)
