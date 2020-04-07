@@ -1,3 +1,1 @@
-var vincent = 'vincent';
-
-console.log(vincent);
+$('.single-item').slick();
